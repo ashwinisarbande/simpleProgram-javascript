@@ -1,0 +1,28 @@
+<html lang="en">
+  <head> </head>
+
+  <body>
+    <div class="dlist">
+      <form>
+        <select name="cars" id="cars">
+          <option value="volvo"></option>
+          <option value="mercedes">Mercedes</option>
+          <option value="maruti">Maruti</option>
+          <option value="audi">Audi</option>
+        </select>
+      </form>
+    </div>
+    <div>
+      <span class="lname" id="listn"></span>
+    </div>
+    <script>
+      var text = document.getElementById("cars");
+      function show() {
+        let as = document.forms[0].cars.value;
+        let pt = text.options[text.selectedIndex].text;
+        document.getElementById("listn").innerHTML = pt;
+      }
+      text.onchange = show;
+    </script>
+  </body>
+</html>

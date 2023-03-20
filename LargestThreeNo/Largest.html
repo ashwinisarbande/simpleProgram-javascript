@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Largest among three Numbers :</title>
+    <script type="text/javascript">
+      const a = parseInt(prompt("Enter a first number"));
+      const b = parseInt(prompt("Enter a second number"));
+      const c = parseInt(prompt("Enter a third number"));
+      let largest;
+
+      if (a > b && a > c) {
+        largest = a;
+        console.log(largest);
+      } else if (b > c && b > a) {
+        largest = b;
+        console.log(largest);
+      } else {
+        largest = c;
+        console.log(largest);
+      }
+    </script>
+  </head>
+</html>

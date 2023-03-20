@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Problrm4 on js</title>
+    <style>
+      .preference {
+        padding-bottom: 15px;
+      }
+
+      .check {
+        background-color: green;
+        color: white;
+        padding: 10px 30px;
+        margin: 4px 80px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="preference">
+      <label>Name : </label>
+      <input type="text" id="name1" />
+    </div>
+    <div>
+      <button class="check" onclick="occ()">check</button>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" id="checkit" value="Ram" />
+      Ram
+      <input type="checkbox" id="checkit1" value="Anil" />
+      Anil
+      <input type="checkbox" id="checkit2" value="Sham" />
+      Sham
+    </div>
+    <div class="form-check">
+      <input type="radio" name="radio-btn" id="rcheck1" value="Ram" />
+      Ram
+      <input type="radio" name="radio-btn" id="rcheck2" value="Anil" />
+      Anil
+      <input type="radio" name="radio-btn" id="rcheck3" value="Sham" />
+      Sham
+    </div>
+    <script>
+      function occ() {
+        let name = document.getElementById("name1").value;
+        let opname1 = document.getElementById("checkit").value;
+        let opname2 = document.getElementById("checkit1").value;
+        let opname3 = document.getElementById("checkit2").value;
+        let radioch1 = document.getElementById("rcheck1").value;
+        let radioch2 = document.getElementById("rcheck2").value;
+        let radioch3 = document.getElementById("rcheck3").value;
+
+        if (name == radioch1) {
+          document.getElementById("checkit").checked = true;
+          document.getElementById("rcheck1").checked = true;
+        }
+
+        if (name == radioch2) {
+          document.getElementById("checkit1").checked = true;
+          document.getElementById("rcheck2").checked = true;
+        }
+
+        if (name == radioch3) {
+          document.getElementById("checkit2").checked = true;
+          document.getElementById("rcheck3").checked = true;
+        }
+      }
+    </script>
+  </body>
+</html>

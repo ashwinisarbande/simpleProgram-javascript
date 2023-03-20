@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+
+    <title></title>
+  </head>
+  <body>
+    <div id="form data">
+      <input
+        type="text"
+        id="stringdata"
+        name="stringdata"
+        placeholder="Enter String"
+        required
+      />
+      <input
+        type="text"
+        id="replacechar"
+        name="replacechar"
+        placeholder="Enter replace char"
+        required
+      />
+      <input
+        type="text"
+        id="newchar"
+        name="newchar"
+        placeholder="Enter new char"
+        required
+      />
+
+      <button id="Login" onclick="checkData()">Check</button>
+      <span id="counter"></span>
+    </div>
+
+    <script type="text/javascript">
+      function checkData() {
+        let stringdata = document.getElementById("stringdata").value;
+        let replacechar = document.getElementById("replacechar").value;
+        let newchar = document.getElementById("newchar").value;
+        let count = stringdata.replaceAll(replacechar, newchar);
+        alert(count);
+      }
+    </script>
+  </body>
+</html>

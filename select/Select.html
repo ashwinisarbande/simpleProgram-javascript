@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Problrm4 on js</title>
+    <style>
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 70px 40px 70px;
+        grid-gap: 10px;
+      }
+      select {
+        width: 70px;
+      }
+      li.relative {
+        position: relative;
+      }
+      #add {
+        position: absolute;
+        width: 40px;
+        font-size: 18px;
+        top: 0;
+      }
+      #remove {
+        position: absolute;
+        width: 40px;
+        font-size: 18px;
+        bottom: 0;
+      }
+    </style>
+
+    <body>
+      <ul>
+        <li>
+          <select id="select1" name="select1" multiple>
+            <option>Ram</option>
+            <option>Gita</option>
+            <option>Anay</option>
+            <option>Priti</option>
+          </select>
+        </li>
+        <li class="relative">
+          <input
+            type="button"
+            id="add"
+            value="&#8702;"
+            onclick="addOptions( 'select1', 'select2' )"
+          />
+          <input
+            type="button"
+            id="remove"
+            value="&#8701;"
+            onclick="addOptions( 'select2', 'select1' )"
+          />
+        </li>
+        <li>
+          <select id="select2" name="select2" multiple></select>
+        </li>
+      </ul>
+
+      <script>
+        function addOptions(fromId, toId) {
+          var fromEl = document.getElementById(fromId),
+            toEl = document.getElementById(toId);
+
+          if (fromEl.selectedIndex >= 0) {
+            var index = toEl.options.length;
+
+            for (var i = 0; i < fromEl.options.length; i++) {
+              if (fromEl.options[i].selected) {
+                toEl.options[index] = fromEl.options[i];
+                i--;
+                index++;
+              }
+            }
+          }
+        }
+      </script>
+    </body>
+  </head>
+</html>
